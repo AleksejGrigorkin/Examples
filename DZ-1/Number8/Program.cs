@@ -10,9 +10,15 @@ while (i <= N)
     int m=i%2;
     if(m==0)
     {
-        if(j>0) Console.Write(", ");
-        Console.Write(i);
-        j=1;      
+        if(j==0)
+        {
+            j=1;  
+        }
+        else
+        {
+            Console.Write(", ");
+        }
+        Console.Write(i);         
     }
     i++;
 }
