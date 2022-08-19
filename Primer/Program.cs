@@ -52,7 +52,7 @@ else
 
 
 
-Console.Write("Введите число: ");
+Console.Write("Введите число N: ");
 int N = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
 int N1 = -N;
