@@ -1,0 +1,143 @@
+// Задача 11. 1-ый вариант решения:
+
+// Random random = new Random();
+// int RandomnNumber = random.Next(100, 1000);
+
+// Console.WriteLine(RandomnNumber);
+
+
+// int firstNumber = RandomnNumber / 100;
+// int secondNumber = RandomnNumber % 10;
+
+// int result = (firstNumber * 10) + secondNumber;
+
+// Console.Write(result);
+
+// Console.Write(firstNumber);
+// Console.Write(secondNumber);
+
+
+
+// Задача 11. 2-ой вариант решения:
+
+// Random random = new Random();
+// int RandomnNumber = random.Next(100, 1000);
+
+// Console.WriteLine(RandomnNumber);
+
+
+// int firstNumber = RandomnNumber / 100;
+// int secondNumber = RandomnNumber % 100;
+// int threeNumber = secondNumber % 10;
+
+// Console.Write(firstNumber);
+// Console.Write(threeNumber);
+
+
+
+// Задача 11. 3-ий вариант решения:
+
+// Random random = new Random();
+// int RandomnNumber = random.Next(100, 1000);
+
+// Console.WriteLine(RandomnNumber);
+
+
+// int firstNumber = RandomnNumber / 100;
+// int secondNumber = RandomnNumber % 100;
+// int threeNumber = secondNumber % 10;
+
+// int result = (firstNumber * 10) + threeNumber;
+
+// Console.Write(result);
+// Console.Write(threeNumber);
+
+
+
+// Задача 12. 1-ый вариант решения:
+
+// Console.Write("Введите число: ");
+// int firstNumber = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число: ");
+// int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+// int result = firstNumber % secondNumber;
+
+// if(result == 0)
+// {
+//     Console.Write("Кратно");
+// }
+// else
+// {
+//     int ostatok = firstNumber % secondNumber;
+//     Console.Write(ostatok);
+// }
+
+
+
+
+
+bool CheckNumber(int number, int firstDivide, int secondDivide)
+{
+    if (number % firstDivide == 0)
+    {
+        if (number % secondDivide == 0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+Console.Write("Введите число: ");
+int firstNumber = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число: ");
+int firstDivide = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число: ");
+int secondDivide = Convert.ToInt32(Console.ReadLine());
+
+
+bool result = CheckNumber(firstNumber, firstDivide, secondDivide);
+
+Console.Write(result);
+
+
+
+
+
+// int int7 = firstNumber / 7;
+// int intn23 = firstNumber / 23;
+
+// if (firstNumber % 7 == 0)
+// {
+//     if (firstNumber % 23 == 0)
+//     {
+//         Console.Write("Кратно");
+//     }
+// }
+// else
+// {
+//     Console.Write("Не кратно");
+// }
+
+
+
+// Задача 16:
+
+// Console.Write("Введите число: ");
+// int firstNumber = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число: ");
+// int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+// int result = secondNumber * secondNumber;
+
+// if(result == firstNumber)
+// {
+//     {
+//         Console.Write("Квадрат");
+//     }
+// }
+// else
+// {
+//     Console.Write("Не квадрат");
+// }
