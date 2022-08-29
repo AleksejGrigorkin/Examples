@@ -3,33 +3,26 @@
 
 using static System.Console;
 int lenght=5;
-home:
-Write($"Введите {lenght}-ти значное число: ");
-bool isNumberX1 = int.TryParse(ReadLine(), out int x1);
-if (!isNumberX1)
+bool isNumber = false; int x1=0;
+while (!isNumber)
 {
-    WriteLine("Это не число");
-    goto home;
-}
-else if (x1 != Math.Abs(x1))
-{
-    WriteLine("Отрицательное число не может быть палиандромом");
-    goto home;
-}
-else if(x1<(int)Math.Pow(10,lenght-1 )^x1>(int)Math.Pow(10,lenght)-1)
-{
-    WriteLine($"Это не {lenght}-ти значное число");
-    goto home;
+    Write($"Введите {lenght}-ти значное число: ");
+    isNumber = int.TryParse(ReadLine(), out x1);
+    if (!isNumber) {WriteLine("Это не число");}
+    else if (x1 != Math.Abs(x1))
+    {
+        WriteLine("Отрицательное число не может быть палиандромом");
+        isNumber = false;
+    }
+    else if(x1<(int)Math.Pow(10,lenght-1 )^x1>(int)Math.Pow(10,lenght)-1)
+    {
+        WriteLine($"Это не {lenght}-ти значное число");
+        isNumber = false;
+    }
 }
 int x2=ConvertInt(x1, lenght);
-if(x1==x2)
-{
-    WriteLine("Введёное число - палиандром");
-}
-else 
-{
-    WriteLine("Введёное число - не палиандром");
-}
+if(x1==x2) {WriteLine("Введёное число - палиандром");}
+else {WriteLine("Введёное число - не палиандром");}
 
 int ConvertInt(int x, int lenght)
 {

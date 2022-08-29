@@ -1,41 +1,21 @@
-﻿// home:
-// Console.WriteLine("введите x");
-// bool isNumberX=int.TryParse(Console.ReadLine (), out int x);
-// Console.WriteLine("введите y");
-// bool isNumberY=int.TryParse(Console.ReadLine (), out int y);
-// if(isNumberX !=true||isNumberY !=true)
-// {
-//     Console.WriteLine("Число не верно");
-//     goto home;
-// }
-// int GetPosition(int x, int y)
-// {
-//     if(x>0&&y>0)
-//     {
-//         return 1;
-//     }
-//     if(x<0&&y>0)
-//     {
-//         return 2;
-//     }
-//     if(x<0&&y<0)
-//     {
-//         return 3;
-//     }
-//     if(x>0&&y<0)
-//     {
-//         return 4;
-//     }
-//     return 0;
-// }
-// if (GetPosition(x, y)==0)
-// {
-//     Console.WriteLine("x или y равны нулю");
-// }
-// else
-// {
-//     Console.WriteLine(GetPosition(x, y)+" четверть");
-// }
+﻿home:
+Console.WriteLine("введите x");
+bool isNumberX = int.TryParse(Console.ReadLine(), out int x);
+Console.WriteLine("введите y");
+bool isNumberY = int.TryParse(Console.ReadLine(), out int y);
+if (isNumberX != true || isNumberY != true) {
+    Console.WriteLine("Число не верно"); goto home;}
+int result=GetPosition(x, y);
+if (result == 0) {Console.WriteLine("x или y равны нулю");}
+else {Console.WriteLine(result + " четверть");}
+
+int GetPosition(int x, int y) {
+    if (x > 0 && y > 0) {return 1;}
+    if (x < 0 && y > 0) {return 2;}
+    if (x < 0 && y < 0) {return 3;}
+    if (x > 0 && y < 0) {return 4;}
+    return 0;}
+
 
 
 // // Задача 18
@@ -97,32 +77,32 @@
 // }
 
 
-//Задача 22
-using static System.Console;
-home:
-Write("Введите число: ");
-bool isNumberX1 = int.TryParse(ReadLine(), out int x1);
-if (!isNumberX1)
-{
-    Console.WriteLine("Это не число");
-    goto home;
-}
-int x2 = Math.Abs(x1);
-int[] arrey = new int[x2];
-arrey = GetTab(x2);
-Write(arrey[0]);
-for (int i = 1; i < x2; i++)
-{
-    Write($", {arrey[i]}");
-}
+// //Задача 22
+// using static System.Console;
+// home:
+// Write("Введите число: ");
+// bool isNumberX1 = int.TryParse(ReadLine(), out int x1);
+// if (!isNumberX1)
+// {
+//     Console.WriteLine("Это не число");
+//     goto home;
+// }
+// int x2 = Math.Abs(x1);
+// int[] arrey = new int[x2];
+// arrey = GetTab(x2);
+// Write(arrey[0]);
+// for (int i = 1; i < x2; i++)
+// {
+//     Write($", {arrey[i]}");
+// }
 
 
-int[] GetTab(int x2)
-{
-    int[] arrey = new int[x2];
-    for (int i = 1; i < x2 + 1; i++)
-    {
-        arrey[i - 1] = i * i;
-    }
-    return arrey;
-}
+// int[] GetTab(int x2)
+// {
+//     int[] arrey = new int[x2];
+//     for (int i = 1; i < x2 + 1; i++)
+//     {
+//         arrey[i - 1] = i * i;
+//     }
+//     return arrey;
+// }
