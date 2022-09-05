@@ -1,6 +1,5 @@
-﻿//Задача 37:
-//Программа генерирует одномерный массив. И находит произведение пар чисел.
-//Пара - первый-последний, второй-предпоследний и т.д.
+﻿//Задача :
+//Программа генерирует одномерный массив. И переворачивает его.
 //Результат выводится в новый массив.
 using static System.Console;
 string text1 = "Введите количество элементов в массиве: ";
@@ -16,11 +15,8 @@ WriteLine(string.Join(", ", priz));
 int[] GetNewArr(int[] array)
 {
     int len=array.Length;
-    int len2=len/2;
-    int newEndIndex=(len+1)/2-1;
-    int[] newarr=new int[newEndIndex+1];
-    if(len%2!=0) {newarr[newEndIndex]=array[newEndIndex];}
-    for(int i=0;i<len2;i++) {newarr[i]=array[i]*array[len-1-i];}
+    int[] newarr=new int[len];
+    for(int i=0;i<len;i++) {newarr[i]=array[len-1-i];}
     return newarr;
 }
 
@@ -57,3 +53,34 @@ int[] FillArray(int length, int min, int max)
     }
     return array;
 }
+
+
+string? a = Console.ReadLine();
+bool isNum1 = int.TryParse(a, out int a1);
+string? b = Console.ReadLine();
+bool isNum2 = int.TryParse(b, out int b1);
+string? c = Console.ReadLine();
+bool isNum3 = int.TryParse(c, out int c1);
+
+if(isNum1 != true || isNum2 != true || isNum3 != true)
+{
+    Console.WriteLine("Введено не целое число");
+    return;
+}
+
+void PrintAnswer(int a, int b, int c)
+
+{
+if(a + b > c && b + c > a && c + a > b)
+{
+    Console.WriteLine("Это треугольник");
+}
+else
+{
+    Console.WriteLine("Это НЕ треугольник");
+}
+
+
+}
+
+PrintAnswer(a1, b1, c1);

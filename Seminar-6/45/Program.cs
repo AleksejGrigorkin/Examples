@@ -1,24 +1,23 @@
-﻿//Задача 36:
-//Программа генерирует одномерный массив, заполненный случайными числами.
-//И находит сумму элементов, стоящих на нечётных позициях.
+﻿//Задача :
+//Программа генерирует одномерный массив. И делает его копию.
+//Результат выводится в новый массив.
 using static System.Console;
 string text1 = "Введите количество элементов в массиве: ";
 string text2 = "Количество элементов должно быть больше нуля";
 int length = InputNaturalNumber(text1, text2);
-int[] arr = FillArray(length, -100, 100);
-int sum = SumNoChetPosition(arr);
-WriteLine($"Массив {length} элементов: ");
+int[] arr = FillArray(length, -9, 9);
+int[] copyArr = GetCopy(arr);
+WriteLine("Массив " + Convert.ToString(length) + " элементов: ");
 WriteLine(string.Join(", ", arr));
-WriteLine($"Количество чётных чмсел в массиве равно: {sum}");
+WriteLine("Новый массив: ");
+WriteLine(string.Join(", ", copyArr));
 
-int SumNoChetPosition(int[] arr)
+int[] GetCopy(int[] array)
 {
-    int sum = 0;
-    for (int i = 1; i < arr.Length; i+=2)
-    {
-        sum+=arr[i];
-    }
-    return sum;
+    int len=array.Length;
+    int[] newarr=new int[len];
+    for(int i=0;i<len;i++) {newarr[i]=array[i];}
+    return newarr;
 }
 
 int InputNaturalNumber(string text1, string text2)

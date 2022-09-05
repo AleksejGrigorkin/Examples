@@ -126,23 +126,23 @@
 // }
 
 
-double[] FibonacciSprint(int n)
-{
-//    int n=50;
-    double[] fibonacci=new double[n];
-    for (int i = 1; i <= n; i++)
-    {
-        if(i == 1 || i == 2) fibonacci[i-1]= 1;
-        else fibonacci[i-1]= fibonacci[i-2] + fibonacci[i-3];
-        Console.WriteLine($"f({i}) = {fibonacci[i-1]}");
-    }
-   return fibonacci; 
-}
+// double[] FibonacciSprint(int n)
+// {
+// //    int n=50;
+//     double[] fibonacci=new double[n];
+//     for (int i = 1; i <= n; i++)
+//     {
+//         if(i == 1 || i == 2) fibonacci[i-1]= 1;
+//         else fibonacci[i-1]= fibonacci[i-2] + fibonacci[i-3];
+//         Console.WriteLine($"f({i}) = {fibonacci[i-1]}");
+//     }
+//    return fibonacci; 
+// }
 
-int n=50;
-double[] fibonacci=new double[n];
-fibonacci=FibonacciSprint(n);
-for (int i = 1; i <= n; i++)
-{
-    Console.WriteLine($"f({i}) = {fibonacci[i-1]}");
-}
+// int n=50;
+// double[] fibonacci=new double[n];
+// fibonacci=FibonacciSprint(n);
+// for (int i = 1; i <= n; i++)
+// {
+//     Console.WriteLine($"f({i}) = {fibonacci[i-1]}");
+// }
