@@ -24,6 +24,7 @@ int[] FindNumberIn2DIntArray(int[,] arr,int number)
             {
                 coord[0]=i;
                 coord[1]=j;
+                return coord;
             }
         }
     }
