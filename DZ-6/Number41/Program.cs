@@ -8,10 +8,8 @@ WriteLine($"Чисел больше нуля введено {num}");
 
 int CheckFinish(string text)
 {
-    int num = -1;
     int count=0;
     int index=0;
-    bool isNumber = false;
     string? stop="";
     while (stop!=text)
     {
@@ -19,7 +17,7 @@ int CheckFinish(string text)
         stop=ReadLine();
         if(stop!=text)
         {
-            isNumber = int.TryParse(stop, out num);
+            bool isNumber = int.TryParse(stop, out int num);
             if (!isNumber) { WriteLine("Это не число"); }
             else
             {

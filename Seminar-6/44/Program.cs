@@ -10,25 +10,25 @@
 
 
 //Задача 45:
-//Программа Считат числа Фибоначчи
+//Программа Считает числа Фибоначчи
 using static System.Console;
 string text1 = "Введите количество чисел Фибоначчи: ";
 string text2 = "Количество элементов должно быть больше нуля";
 int n = InputNaturalNumber(text1, text2);
 double[] fibonacci=new double[n];
 fibonacci=FibonacciSprint(n);
-for (int i = 1; i <= n; i++)
+for (int i = 0; i < n; i++)
 {
-    Console.WriteLine($"f({i}) = {fibonacci[i-1]}");
+    Console.WriteLine($"f({i}) = {fibonacci[i]}");
 }
 
 double[] FibonacciSprint(int n)
 {
     double[] fibonacci=new double[n];
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(i == 1 || i == 2) fibonacci[i-1]= 1;
-        else fibonacci[i-1]= fibonacci[i-2] + fibonacci[i-3];
+        if(i == 0 || i == 1) fibonacci[i]= i;
+        else fibonacci[i]= fibonacci[i-1] + fibonacci[i-2];
     }
    return fibonacci; 
 }

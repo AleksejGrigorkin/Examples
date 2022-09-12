@@ -1,52 +1,16 @@
-﻿// Задача 50.
-// Программа на вход принимает число и двумерный массив.
-// Проверяет его наличие в массиве и возвращает индексы найденного элемента.
-// Или сообщает, что такого элемента нет.
-using static System.Console;
-int[,] array=GenMNIntArr();
-WriteLine();
-int number = InputInt("Введите искомое число: ");
-int[] coord= FindNumberIn2DIntArray(array,number);
-if(coord[0]==-1) {WriteLine($"Заданного числа в массиве нет");}
-else {WriteLine($"array[{coord[0]},{coord[1]}] = {number}");}
-WriteLine();
-
-int[] FindNumberIn2DIntArray(int[,] arr,int number)
-// Ищет число и возвращает его координаты.
-{
-    int[] coord=new int[2];
-    coord[0]=-1;
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            if(number==arr[i,j])
-            {
-                coord[0]=i;
-                coord[1]=j;
-		return coord;
-            }
-        }
-    }
-    return coord;
-}
-
-int[,] GenMNIntArr()
+﻿// Задача 46.
 // Программа показывает двумерный массив размером m*n, заполненный целыми числами.
-{
+using static System.Console;
 string text1 = "Введите количество строк в массиве: ";
 string text2 = "Количество элементов должно быть больше нуля";
 int row = InputNaturalNumber(text1, text2);
 text1 = "Введите количество столбцов в массиве: ";
 int column = InputNaturalNumber(text1, text2);
-int[,] arr = Fill2DIntArray(row, column, -1000, 1000);
-WriteLine();
+int[,] arr = FillArrayTwodim(row, column, -1000, 1000);
 WriteLine($"Массив целых чисел {row}*{column}:");
-Print2DIntArray(arr);
-return arr;
-}
+PrintArrayTwodimInt(arr);
 
-int[,] Fill2DIntArray(int row, int column, int min, int max)
+int[,] FillArrayTwodim(int row, int column, int min, int max)
 // Создаёт двумерный массив и заполняет его случайными целыми числами.
 {
     int[,] array = new int[row, column];
@@ -55,14 +19,14 @@ int[,] Fill2DIntArray(int row, int column, int min, int max)
     {
         for (int j = 0; j < column; j++)
         {
-            array[i, j] = random.Next(min, max+1);
+            array[i, j] = random.Next(min,max+1);
         }
     }
     return array;
 }
 
-void Print2DIntArray(int[,] arr)
-// Вывод на экран двумерного целого массива.
+void PrintArrayTwodimInt(int[,] arr)
+// Вывод на экран двумерного double массива.
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
