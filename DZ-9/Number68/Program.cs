@@ -6,30 +6,14 @@ string text2 = "Аргументы не должны быть меньше ну�
 int M = InputNaturalNumberPlusNull(text1, text2);
 text1 = "Введите второй аргумент функции Аккермана: ";
 int N = InputNaturalNumberPlusNull(text1, text2);
-int[] A = new int[2];
-A[0] = M;
-A[1] = N;
-Akkerman(A);
-WriteLine($"Akkerman({M},{N}) = {A[1]}");
+WriteLine($"Akkerman({M},{N}) = {Akkerman(M,N)}");
 
-void Akkerman(int[] A)
+int Akkerman(int M, int N)
 // Функция Аккермана
 {
-    if (A[0] == 0) { A[1]++; }
-    else if (A[1] == 0 && A[0] > 0)
-    {
-        A[0]--;
-        A[1] = 1;
-        Akkerman(A);
-    }
-    else
-    {
-        int mm = A[0] - 1;
-        A[1]--;
-        Akkerman(A);
-        A[0] = mm;
-        Akkerman(A);
-    }
+    if (M == 0) {return N+1; }
+    else if (N == 0 && M > 0) {return Akkerman(M-1,1);}
+    else {return Akkerman(M-1,Akkerman(M,N-1));}
 }
 
 int InputNaturalNumberPlusNull(string text1, string text2)
